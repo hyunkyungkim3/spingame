@@ -1,0 +1,116 @@
+/* 전체 페이지 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 95%;
+}
+
+/* 제목 스타일 */
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* 룰렛 컨테이너 스타일 */
+.wheel-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto 2rem;
+}
+
+/* 포인터 스타일 - 원판 위쪽(12시 방향)으로 이동 */
+.pointer {
+    position: absolute;
+    top: -28px; /* 원판 위쪽에 위치하도록 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 40px solid #ff4444; /* 아래쪽을 향하는 화살표 */
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* 결과 표시 영역 스타일 */
+.result {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4444;
+    margin: 1rem 0;
+    min-height: 3rem;
+}
+
+/* 시작 버튼 스타일 */
+.spin-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.spin-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.spin-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    .wheel-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .result {
+        font-size: 1.5rem;
+    }
+    
+    .spin-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+} 
